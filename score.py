@@ -45,7 +45,7 @@ def main():
     n = int(input("Số học sinh: "))
     for i in range(n):
         name = input("Tên học sinh: ")
-        math = float(input("Điểm toán: "))
+        math = float(input("Điểm toán: ") )
         literature = float(input("Điểm văn: "))
         english = float(input("Điểm anh: "))
 
