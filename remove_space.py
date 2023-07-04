@@ -1,29 +1,21 @@
-def process_name(name):
-    # Tách chuỗi thành các từ riêng biệt
-    words = name.split()
+def process_name(full_name):
+    # Tách họ và tên thành danh sách các từ
+    words = full_name.split()
+    
+    # Lấy tên và chuyển đổi chữ thường, viết hoa chữ cái đầu
+    first_name = words[-1].capitalize()
 
-    # Loại bỏ khoảng trắng ở đầu và cuối các từ
-    words = [word.strip() for word in words if word.strip()]
+    # Ngoại trừ cụm từ cuối trong list (tên)
+    # Lấy chữ cái đầu của tất cả các cụm còn lại
+    # Viết hoa lên và add vào short_last_name
+    short_last_name = ''.join([word[0].upper() for word in words[:-1]])
 
-    # Chuyển đổi chữ cái đầu của từ thành chữ hoa, các chữ cái còn lại thành chữ thường
-    processed_words = [word.capitalize() for word in words]
+    # Ghép họ và tên
+    name = first_name + short_last_name
 
-    # Lấy ký tự đầu tiên của họ và tên lót
-    first_character = processed_words[0][0].upper()  # Chuyển ký tự đầu của từ thành chữ hoa
-    rest_of_word = processed_words[0][1:].lower()  # Chuyển các ký tự còn lại của từ thành chữ thường
+    return name
 
-    # Kết hợp họ và tên lót và chữ cái đầu của tên
-    processed_name = first_character + rest_of_word + ''.join(processed_words[1:])
 
-    return processed_name
-
-# Test với các ví dụ
-name1 = "    le thi   Be    Nho   "
-name2 = " nguyen mat   tROi  "
-
-processed_name1 = process_name(name1)
-processed_name2 = process_name(name2)
-
-print(processed_name1)  # Kết quả: LThiBeNho
-print(processed_name2)  # Kết quả: NMatTroi
-
+full_name = input("Nhập họ và tên: ")
+name = process_name(full_name)
+print("Họ và tên đã xử lý:", name)

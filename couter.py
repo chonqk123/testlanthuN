@@ -12,5 +12,5 @@ counter = Counter(elements)
 # Sắp xếp kết quả theo thứ tự tăng dần theo số lần xuất hiện
 sorted_counter = dict(sorted(counter.items(), key=lambda item: item[1]))
 
-# In ra kết quả
+
 print(sorted_counter)
