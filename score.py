@@ -13,6 +13,7 @@ class Manager:
     def __init__(self):
         self.students = []
 
+    # Add từng student vào list
     def add_student(self, student):
         self.students.append(student)
 
@@ -30,6 +31,7 @@ class Manager:
         for student in self.students:
             print(f"name: {student.name}, toan: {student.math}, van: {student.literature}, anh: {student.english}, avg: {student.avg()}")
 
+    # Sinh viên có điểm trung bình cao nhất
     def print_highest_average_students(self):
         highest_avg = self.max_avg()
         highest_avg_students = [student for student in self.students if student.avg() == highest_avg]
