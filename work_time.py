@@ -14,7 +14,7 @@ def overtime(check_in, check_out):
 
     # Kiểm tra các điều kiện và trả về kết quả tương ứng
     if overtime_hours > 4 and total_check_in_minutes <= 12* 60 and total_check_out_minutes >= 13 * 60:
-        overtime_hours -= 1
+        overtime_hours -=  1
         lunch = "Y"
         dinner = "N"
     elif overtime_hours > 3 and total_check_out_minutes>= 21 * 60:
